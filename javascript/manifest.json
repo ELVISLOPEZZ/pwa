@@ -1,0 +1,21 @@
+{
+    "name": "DEV COFE",
+    "short_name": "devcoffe",
+    "start_url": "/javascript/index.html",
+    "display": "standalone",
+    "background_color": "#db4938",
+    "theme_color": "#fdfdfd",
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "/images/icons/icon-192x192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "/images/icons/icon-512x512.jpeg",
+            "type": "image/jpeg",
+            "sizes": "512x512"
+        }
+    ]
+}

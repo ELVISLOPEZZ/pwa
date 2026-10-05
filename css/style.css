@@ -1,0 +1,210 @@
+/* Estilos generales básicos */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    margin: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+nav {
+    background-color: #6f4e37;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h1 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+}
+
+nav ul li {
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* Contenedor de las tarjetas */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.card-img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-title {
+    margin: 0 0 10px 0;
+    font-size: 1.25rem;
+    color: #333;
+}
+
+.card-text {
+    margin: 0 0 15px 0;
+    font-size: 1rem;
+    color: #666;
+    flex-grow: 1;
+}
+
+/* Estilo del Botón Ver más */
+.btn-ver-mas {
+    background-color: #6f4e37;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+.btn-ver-mas:hover {
+    background-color: #563d28;
+}
+
+/* Estilos de la ventana Modal (Oculta por defecto) */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 25px;
+    width: 90%;
+    max-width: 450px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+    font-size: 1rem;
+}
+
+#close-modal {
+    color: #aaa;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#close-modal:hover {
+    color: #000;
+}
+
+#modal-title {
+    margin-top: 0;
+    font-size: 1.35rem;
+    color: #6f4e37;
+}
+
+#modal-desc {
+    font-size: 1rem;
+}
+
+#modal-extra {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #444;
+}
+
+
+/* Estilos para la vista de detalle */
+.detail-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.btn-volver {
+    color: white;
+    text-decoration: none;
+    background: #563d28;
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.btn-volver:hover {
+    background: #3e2b1c;
+}
+
+.detail-content {
+    background: white;
+    margin-top: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.detail-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.detail-info {
+    padding: 25px;
+    font-size: 1rem;
+}
+
+.detail-info h2 {
+    color: #6f4e37;
+    margin-top: 0;
+    font-size: 1.8rem;
+}
+
+#detail-extra {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    font-weight: bold;
+    color: #444;
+}
