@@ -1,7 +1,7 @@
 // Registro del Service Worker
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-        navigator.serviceWorker.register('servicesworker.js')
+        navigator.serviceWorker.register('javascript/servicesworker.js')
             .then(reg => console.log('Service Worker registrado con éxito:', reg))
             .catch(err => console.log('Fallo al registrar el Service Worker:', err));
     });
@@ -13,37 +13,37 @@ const coffees = [
         title: "Café Espresso", 
         description: "Café negro fuerte e intenso, ideal para empezar el día.", 
         details: "Origen: Italia. Preparación a alta presión. Contiene 30ml de pura energía y una crema compacta en la superficie.",
-        image: "../images/coffee.jpg" 
+        image: "images/coffee.jpg" 
     },
     { 
         title: "Café Capuchino", 
         description: "Deliciosa combinación de espresso, leche vaporizada y espuma.", 
         details: "Origen: Italia. Se sirve tradicionalmente en partes iguales: 1/3 espresso, 1/3 leche vaporizada y 1/3 espuma cremosa.",
-        image: "../images/coffee.jpg"    
+        image: "images/coffee.jpg"    
     },
     { 
         title: "Café Latte", 
         description: "Suave mezcla de café espresso con abundante leche cremosa.", 
         details: "Origen: Europa. Contiene una sola toma de espresso y una cantidad generosa de leche sedosa con una ligera capa de espuma.",
-        image: "../images/coffee.jpg"    
+        image: "images/coffee.jpg"    
     },
     { 
         title: "Café Americano", 
         description: "Café espresso diluido con agua caliente, suave y aromático.", 
         details: "Origen: Segunda Guerra Mundial. Ideal para quienes buscan un café largo sin la intensidad directa de un espresso puro.",
-        image: "../images/coffee.jpg"    
+        image: "images/coffee.jpg"    
     },
     {
         title: "Café Mocha", 
         description: "Exquisita mezcla de espresso, chocolate caliente y leche.", 
         details: "Origen: Yemen/Estados Unidos. Perfecto para los amantes del dulce, combinando la fuerza del café con la dulzura del cacao.",
-        image: "../images/coffee.jpg"    
+        image: "images/coffee.jpg"    
     },
     {
         title: "Café Macchiato", 
         description: "Café espresso 'manchado' con una pequeña cantidad de leche espumada.", 
         details: "Origen: Italia. Diseñado para quienes disfrutan el cuerpo fuerte del espresso pero buscan suavizar ligeramente su acidez.",
-        image: "../images/coffee.jpg"    
+        image: "images/coffee.jpg"    
     }
 ];
 
@@ -64,7 +64,7 @@ function renderCards() {
                 <h3 class="card-title">${coffee.title}</h3>
                 <p class="card-text">${coffee.description}</p>
                 <!-- Redirige a la segunda pantalla (detalle.html) enviando el índice -->
-                <button class="btn-ver-mas" onclick="window.location.href='detalle.html?id=${index}'">Ver más</button>
+                <button class="btn-ver-mas" onclick="window.location.href='javascript/detalle.html?id=${index}'">Ver más</button>
             </div>
         `;
 
