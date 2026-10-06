@@ -1,11 +1,23 @@
-/* Estilos generales básicos */
+```css
+/* =========================
+   ESTILOS GENERALES
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
     font-size: 1rem;
     margin: 0;
-    background-color: #f4f4f9;
+    background-color: #f5f1ed;
     color: #333;
 }
+
+/* =========================
+   NAVEGACIÓN
+========================= */
 
 nav {
     background-color: #6f4e37;
@@ -14,52 +26,69 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 20px;
 }
 
 nav h1 {
     font-size: 1.5rem;
     margin: 0;
+    white-space: nowrap;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 25px;
     margin: 0;
+    padding: 0;
 }
 
 nav ul li {
     font-size: 1rem;
     cursor: pointer;
+    transition: opacity 0.2s;
 }
 
-/* Contenedor de las tarjetas */
+nav ul li:hover {
+    opacity: 0.7;
+}
+
+/* =========================
+   TARJETAS
+========================= */
+
 .container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    padding: 20px;
+    gap: 25px;
+    padding: 30px 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .card {
     background: white;
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
     display: flex;
     flex-direction: column;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .card-img {
     width: 100%;
-    height: 160px;
+    height: 190px;
     object-fit: cover;
 }
 
 .card-body {
-    padding: 15px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -67,37 +96,45 @@ nav ul li {
 
 .card-title {
     margin: 0 0 10px 0;
-    font-size: 1.25rem;
-    color: #333;
+    font-size: 1.3rem;
+    color: #6f4e37;
 }
 
 .card-text {
-    margin: 0 0 15px 0;
+    margin: 0 0 20px 0;
     font-size: 1rem;
+    line-height: 1.5;
     color: #666;
     flex-grow: 1;
 }
 
-/* Estilo del Botón Ver más */
+/* =========================
+   BOTÓN VER MÁS
+========================= */
+
 .btn-ver-mas {
     background-color: #6f4e37;
     color: white;
     border: none;
-    padding: 10px;
-    border-radius: 4px;
+    padding: 12px;
+    border-radius: 6px;
     font-size: 1rem;
     cursor: pointer;
     font-weight: bold;
-    transition: background 0.2s;
+    transition: background-color 0.2s, transform 0.2s;
 }
 
 .btn-ver-mas:hover {
     background-color: #563d28;
+    transform: scale(1.02);
 }
 
-/* Estilos de la ventana Modal (Oculta por defecto) */
+/* =========================
+   MODAL
+========================= */
+
 .modal {
-    display: none; 
+    display: none;
     position: fixed;
     z-index: 1000;
     left: 0;
@@ -107,6 +144,7 @@ nav ul li {
     background-color: rgba(0, 0, 0, 0.6);
     justify-content: center;
     align-items: center;
+    padding: 20px;
 }
 
 .modal-content {
@@ -114,8 +152,8 @@ nav ul li {
     padding: 25px;
     width: 90%;
     max-width: 450px;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
     position: relative;
     font-size: 1rem;
 }
@@ -142,6 +180,7 @@ nav ul li {
 
 #modal-desc {
     font-size: 1rem;
+    line-height: 1.5;
 }
 
 #modal-extra {
@@ -153,52 +192,62 @@ nav ul li {
     color: #444;
 }
 
+/* =========================
+   VISTA DE DETALLE
+========================= */
 
-/* Estilos para la vista de detalle */
 .detail-container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 0 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px 30px;
+}
+
+.detail-container nav {
+    margin: 0 -20px;
 }
 
 .btn-volver {
     color: white;
     text-decoration: none;
     background: #563d28;
-    padding: 8px 15px;
-    border-radius: 4px;
+    padding: 9px 16px;
+    border-radius: 6px;
     font-size: 1rem;
+    transition: background-color 0.2s;
 }
 
 .btn-volver:hover {
     background: #3e2b1c;
 }
 
-.detail-content {
+.detail-card {
     background: white;
-    margin-top: 20px;
-    border-radius: 8px;
+    margin-top: 25px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    display: flex;
-    flex-direction: column;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
 }
 
-.detail-img {
+.detail-card img {
     width: 100%;
-    height: 250px;
+    height: 350px;
     object-fit: cover;
 }
 
-.detail-info {
-    padding: 25px;
-    font-size: 1rem;
+.detail-body {
+    padding: 30px;
 }
 
-.detail-info h2 {
+.detail-body h2 {
     color: #6f4e37;
     margin-top: 0;
-    font-size: 1.8rem;
+    margin-bottom: 15px;
+    font-size: 2rem;
+}
+
+.detail-body p {
+    line-height: 1.6;
+    color: #555;
 }
 
 #detail-extra {
@@ -207,4 +256,164 @@ nav ul li {
     border-top: 1px solid #eee;
     font-weight: bold;
     color: #444;
+}
+
+/* =========================
+   RESPONSIVE - TABLETS
+========================= */
+
+@media (max-width: 768px) {
+
+    nav {
+        padding: 1rem;
+    }
+
+    nav h1 {
+        font-size: 1.3rem;
+    }
+
+    nav ul {
+        gap: 12px;
+    }
+
+    nav ul li {
+        font-size: 0.9rem;
+    }
+
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+        padding: 20px 15px;
+    }
+
+    .card-img {
+        height: 170px;
+    }
+
+    .detail-container {
+        padding: 0 15px 25px;
+    }
+
+    .detail-container nav {
+        margin: 0 -15px;
+    }
+
+    .detail-card img {
+        height: 280px;
+    }
+}
+
+/* =========================
+   RESPONSIVE - CELULARES
+========================= */
+
+@media (max-width: 600px) {
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+    }
+
+    nav h1 {
+        font-size: 1.4rem;
+    }
+
+    nav ul {
+        width: 100%;
+        justify-content: space-between;
+        gap: 8px;
+    }
+
+    nav ul li {
+        font-size: 0.85rem;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px 15px;
+    }
+
+    .card-img {
+        height: 210px;
+    }
+
+    .card-body {
+        padding: 18px;
+    }
+
+    .card-title {
+        font-size: 1.2rem;
+    }
+
+    .card-text {
+        font-size: 0.95rem;
+    }
+
+    .btn-ver-mas {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .detail-container {
+        padding: 0 10px 20px;
+    }
+
+    .detail-container nav {
+        margin: 0 -10px;
+        padding: 15px 10px;
+    }
+
+    .btn-volver {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+
+    .detail-card {
+        margin-top: 15px;
+    }
+
+    .detail-card img {
+        height: 220px;
+    }
+
+    .detail-body {
+        padding: 20px;
+    }
+
+    .detail-body h2 {
+        font-size: 1.6rem;
+    }
+
+    .detail-body p {
+        font-size: 0.95rem;
+    }
+}
+
+/* =========================
+   CELULARES PEQUEÑOS
+========================= */
+
+@media (max-width: 380px) {
+
+    nav h1 {
+        font-size: 1.2rem;
+    }
+
+    nav ul li {
+        font-size: 0.75rem;
+    }
+
+    .container {
+        padding: 15px 10px;
+    }
+
+    .card-img {
+        height: 180px;
+    }
+
+    .detail-card img {
+        height: 190px;
+    }
 }
