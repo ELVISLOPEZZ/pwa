@@ -9,31 +9,31 @@ const coffees = [
         title: "Café Capuchino",
         description: "Deliciosa combinación de espresso, leche vaporizada y espuma.",
         details: "Origen: Italia. Se sirve tradicionalmente en partes iguales: 1/3 espresso, 1/3 leche vaporizada y 1/3 espuma cremosa.",
-        image: "../images/Café Capuchino.jpeg"
+        image: "../images/cafe-capuchino.jpeg"
     },
     {
         title: "Café Latte",
         description: "Suave mezcla de café espresso con abundante leche cremosa.",
         details: "Origen: Europa. Contiene una sola toma de espresso y una cantidad generosa de leche sedosa con una ligera capa de espuma.",
-        image: "../images/Café Latte.jpg"
+        image: "../images/cafe-latte.jpg"
     },
     {
         title: "Café Americano",
         description: "Café espresso diluido con agua caliente, suave y aromático.",
         details: "Origen: Segunda Guerra Mundial. Ideal para quienes buscan un café largo sin la intensidad directa de un espresso puro.",
-        image: "../images/Café Americano.jpeg"
+        image: "../images/cafe-americano.jpeg"
     },
     {
         title: "Café Mocha",
         description: "Exquisita mezcla de espresso, chocolate caliente y leche.",
         details: "Origen: Yemen/Estados Unidos. Perfecto para los amantes del dulce, combinando la fuerza del café con la dulzura del cacao.",
-        image: "../images/Café Mocha.jpeg"
+        image: "../images/cafe-mocha.jpeg"
     },
     {
         title: "Café Macchiato",
         description: "Café espresso 'manchado' con una pequeña cantidad de leche espumada.",
         details: "Origen: Italia. Diseñado para quienes disfrutan el cuerpo fuerte del espresso pero buscan suavizar ligeramente su acidez.",
-        image: "../images/Café Macchiato.jpeg"
+        image: "../images/cafe-macchiato.jpeg"
     }
 ];
 
