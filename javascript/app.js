@@ -1,7 +1,7 @@
 // Registro del Service Worker
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-        navigator.serviceWorker.register('javascript/servicesworker.js')
+        navigator.serviceWorker.register('servicesworker.js')
             .then(reg => console.log('Service Worker registrado con éxito:', reg))
             .catch(err => console.log('Fallo al registrar el Service Worker:', err));
     });
@@ -74,3 +74,4 @@ function renderCards() {
 
 // Ejecutar al cargar la página
 document.addEventListener('DOMContentLoaded', renderCards);
+

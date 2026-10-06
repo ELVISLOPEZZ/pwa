@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" href="../css/style.css">
-        <title>Detalle del Café</title>    
-    </head>
-    <body>
-       <main class="detail-container">
-            <nav>
-                <h1>Coffee PWA</h1>
-                <!-- Botón para regresar a la pantalla principal -->
-                <a href="index.html" class="btn-volver">← Volver</a>
-            </nav>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Detalle del Cafe</title>
+</head>
+<body>
 
-            <div class="detail-content">
-                <img id="detail-img" src="" alt="Imagen de café" class="detail-img">
-                <div class="detail-info">
-                    <h2 id="detail-title">Cargando...</h2>
-                    <p id="detail-desc" style="font-size: 1rem;"></p>
-                    <p id="detail-extra" style="font-size: 1rem;"></p>
-                </div>
+    <main class="detail-container">
+
+        <nav>
+            <h1>Coffee PWA</h1>
+            <a href="../index.html" class="btn-volver">Volver</a>
+        </nav>
+
+        <section class="detail-card">
+            <img id="detail-img" src="../images/coffee.jpg" alt="Cafe">
+
+            <div class="detail-body">
+                <h2 id="detail-title">Cafe</h2>
+                <p id="detail-desc"></p>
+                <p id="detail-extra"></p>
             </div>
-       </main>
+        </section>
 
-       <!-- Script para capturar el café seleccionado y pintarlo en pantalla -->
-       <script src="detalle.js"></script>
-    </body>
+    </main>
+
+    <script src="detalle.js"></script>
+
+</body>
 </html>
