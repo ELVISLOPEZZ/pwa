@@ -1,4 +1,4 @@
-const CACHE_NAME = 'coffe-pwa-v2';
+const CACHE_NAME = 'coffe-pwa-v3';
 
 const urlsToCache = [
     './',
@@ -24,7 +24,7 @@ self.addEventListener('install', event => {
     event.waitUntil(
         caches.open(CACHE_NAME)
             .then(cache => cache.addAll(urlsToCache))
-            .catch(err => console.log('Error al cachear:', err))
+            .then(() => self.skipWaiting())
     );
 });
 
@@ -38,7 +38,7 @@ self.addEventListener('activate', event => {
                     }
                 })
             );
-        })
+        }).then(() => self.clients.claim())
     );
 });
 
