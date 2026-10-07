@@ -1,4 +1,4 @@
-const CACHE_NAME = 'coffe-pwa-v3';
+const CACHE_NAME = 'coffe-pwa-v4';
 
 const urlsToCache = [
     './',
@@ -8,7 +8,19 @@ const urlsToCache = [
     './javascript/app.js',
     './javascript/detalle.html',
     './javascript/detalle.js',
+
+    // Imágenes de los cafés
+    './images/expreso.jpeg',
+    './images/cafe-capuchino.jpeg',
+    './images/cafe-latte.jpg',
+    './images/cafe-americano.jpeg',
+    './images/cafe-mocha.jpeg',
+    './images/cafe-macchiato.jpeg',
+
+    // Imagen general
     './images/coffee.jpg',
+
+    // Íconos
     './images/icons/icon-48x48.png',
     './images/icons/icon-72x72.png',
     './images/icons/icon-152x152.png',
