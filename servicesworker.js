@@ -1,4 +1,4 @@
-const CACHE_NAME = 'coffe-pwa-v4';
+const CACHE_NAME = 'coffe-pwa-v5';
 
 const urlsToCache = [
     './',
@@ -54,39 +54,45 @@ self.addEventListener('activate', event => {
     );
 });
 
-// Evento Fetch con estrategia híbrida (Network-First para HTML y Cache-First para recursos estáticos)
+// Evento Fetch optimizado para manejar rutas con parámetros sin conexión
 self.addEventListener('fetch', event => {
     const requestURL = new URL(event.request.url);
 
-    // 1. ESTRATEGIA NETWORK-FIRST PARA HTML / NAVEGACIÓN
-    // Si el usuario solicita una página HTML, intentamos traerla de la red primero.
+    // Si es una petición HTML (incluyendo páginas de detalle con parámetros ?id=...)
     if (event.request.mode === 'navigate' || requestURL.pathname.endsWith('.html') || requestURL.pathname.endsWith('/')) {
         event.respondWith(
             fetch(event.request)
                 .then(networkResponse => {
-                    // Si la red responde, actualizamos el caché de forma dinámica y devolvemos la respuesta
                     return caches.open(CACHE_NAME).then(cache => {
                         cache.put(event.request, networkResponse.clone());
                         return networkResponse;
                     });
                 })
                 .catch(() => {
-                    // Si falla la red (sin internet), buscamos en el caché
-                    return caches.match(event.request);
+                    // Si no hay red, intentamos buscar la página exacta en el caché
+                    return caches.match(event.request).then(cachedResponse => {
+                        if (cachedResponse) {
+                            return cachedResponse;
+                        }
+                        // Si falla (por ejemplo, por los parámetros de la URL), devolvemos el detalle.html base
+                        if (requestURL.pathname.includes('detalle.html')) {
+                            return caches.match('./javascript/detalle.html');
+                        }
+                        // O el index principal como respaldo general
+                        return caches.match('./index.html');
+                    });
                 })
         );
         return;
     }
 
-    // 2. ESTRATEGIA CACHE-FIRST PARA RECURSOS ESTÁTICOS (Imágenes, CSS, JS)
-    // Para el resto de archivos, buscamos primero en el caché para mayor velocidad.
+    // Estrategia Cache-First para recursos estáticos (imágenes, CSS, JS)
     event.respondWith(
         caches.match(event.request)
             .then(cachedResponse => {
                 if (cachedResponse) {
-                    return cachedResponse; // Encontrado en caché
+                    return cachedResponse;
                 }
-                // Si no está en caché, lo descargamos de la red y lo guardamos
                 return fetch(event.request).then(networkResponse => {
                     return caches.open(CACHE_NAME).then(cache => {
                         cache.put(event.request, networkResponse.clone());
